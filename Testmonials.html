@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Testimonial</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			/* width: 100%;
+			min-height: 100vh; */
+			background-color: #fcfcfc;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container {
+			position: relative;
+			width: 100%;
+			min-height: 450px;
+			background-color: #f5f5f5;
+		}
+
+		.container .contents-wraper {
+			width: 70%;
+			min-height: inherit;
+			margin: 30px auto;
+			text-align: center;
+		}
+
+		.contents-wraper .header h1 {
+			position: relative;
+			font-size: 40px;
+			text-transform: uppercase;
+			font-weight: 500;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+
+		.contents-wraper .header h1::before {
+			content: '';
+			width: 200px;
+			height: 2px;
+			background-color: #006994;
+			border-radius: 15px;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -10px;
+		}
+
+		.contents-wraper .testRow {
+			width: 100%;
+			min-height: inherit;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.testRow .testItem {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		.testRow .testItem:not(.active) {
+			top: 0;
+			left: -100%;
+		}
+
+		.testRow .testItem img {
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-bottom: 5px;
+			outline: 2px solid #006994;
+			outline-offset: 2px;
+		}
+
+		.testRow .testItem h3 {
+			font-size: 30px;
+			font-style: italic;
+			padding: 7px;
+		}
+
+		.testRow .testItem h4 {
+			font-style: italic;
+		}
+
+		.testRow .testItem p {
+			font-size: 18px;
+			letter-spacing: 1px;
+			line-height: 1.2;
+			padding: 10px;
+		}
+
+		.contents-wraper .indicators {
+			position: absolute;
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 5px;
+			cursor: pointer;
+		}
+
+		.contents-wraper .indicators .dot {
+			width: 15px;
+			height: 15px;
+			margin: 0px 3px;
+			border: 3px solid #aaa;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.5s ease;
+		}
+
+		.contents-wraper .indicators .active {
+			background-color: #006994;
+		}
+
+		@keyframes next1 {
+			from {
+				left: 0%;
+			}
+
+			to {
+				left: -100%;
+			}
+		}
+
+		@keyframes next2 {
+			from {
+				left: 100%;
+			}
+
+			to {
+				left: 0%;
+			}
+		}
+
+		@keyframes prev1 {
+			from {
+				left: 0%;
+			}
+
+			to {
+				left: 100%;
+			}
+		}
+
+		@keyframes prev2 {
+			from {
+				left: -100%;
+			}
+
+			to {
+				left: 0%;
+			}
+		}
+
+		@media(max-width: 550px) {
+			.container .contents-wraper {
+				width: 90%;
+			}
+
+			.contents-wraper .header h1 {
+				font-size: 32px;
+			}
+
+			.testRow .testItem h3 {
+				font-size: 26px;
+			}
+
+			.testRow .testItem p {
+				font-size: 16px;
+				letter-spacing: initial;
+				line-height: initial;
+			}
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="contents-wraper">
+
+			<section class="header">
+				<h1>FROM OUR CLIENTS</h1>
+			</section>
+
+			<section class="testRow">
+
+				<div class="testItem active">
+					<img src="Images/testimonials/kripa.png">
+					<h3>Kripa Designers</h3>
+					<h4>Hyderabad, India</h4>
+					<p>"Saanvika Software Solutions has excellently translated our unique clothing designs into an
+						engaging website, showcasing our brand identity with precision. We appreciate their dedication
+						to presenting our designs effectively on the digital stage at Kripa Designers."</p>
+				</div>
+
+			<div class="testItem">
+				<img src="Images/testimonials/comaas.jpg">
+				<h3>COMAAS Industries</h3>
+				<h4>Korea</h4>
+				<p>"Saanvika Software Solutions has significantly boosted our online presence through effective digital marketing strategies. Their crafted website perfectly embodies our brand identity. We're thankful for their exceptional services, which have greatly contributed to Comaas's digital success."</p>
+			</div>
+
+			<div class="testItem">
+				<img src="Images/testimonials/Koradala-Naresh.png">
+				<h3>Karadala Naresh</h3>
+				<h4>BJP State member</h4>
+				<p>"Saanvika Software Solutions has revolutionized our digital presence! Their digital marketing team orchestrated a campaign that not only boosted our online visibility but also significantly increased engagement. We couldn't be happler with the results"</p>
+			</div>
+
+				<div class="testItem">
+					<img src="Images/testimonials/WhatsApp Image 2024-03-28 at 2.48.02 PM.jpeg">
+					<h3>Sruthi Technologies</h3>
+					<h4>Hyderabad, India</h4>
+					<p>"Saanvika Software Solutions isn't just a service provider, they are strategic partners in our
+						growth Journey. Their insights into our industry, coupled with their top-notch digital marketing
+						and web development skills, have significantly contributed to our success."</p>
+				</div>
+
+			<div class="testItem">
+				<img src="Images/testimonials/gcb.png">
+				<h3>Gandhi Cooperative Bank</h3>
+				<h4>Vijayawada, India</h4>
+				<p>"I am extremely pleased with the services provided by Saanvika Software Solutions. Their expertise and dedication have significantly enhanced our operations at Gandhi Cooperative Bank."</p>
+			</div>
+			<div class="testItem">
+				<img src="Images/testimonials/VDC logo (2) (1).png">
+				<h3>Vivekananda Degree & PG College</h3>
+				<h4>Hyderabad, India</h4>
+				<p>"Saanvika Software Solutions crafted a stellar website for Vivekananda Degree & PG College, capturing our essence with precision. Their professionalism, prompt responses, and tailored approach ensured an outstanding online presence. Highly recommended!"</p>
+			</div>
+			<div class="testItem">
+				<img src="Images/testimonials/Sanghamitra logo.png">
+				<h3> Sanghamitra Degree & PG College</h3>
+				<h4>Hyderabad, India</h4>
+				<p>"Saanvika Software Solutions brilliantly transformed Sanghamitra Degree & PG College's online presence with an impeccably designed website. Their expertise and personalized approach perfectly showcased our institution's values. Highly impressed and recommended!"</p>
+			</div>
+			<div class="testItem">
+				<img src="Images/testimonials/vis.jpg">
+				<h3> Vivekananda International School</h3>
+				<h4>Hyderabad, India</h4>
+				<p>"Saanvika Software Solutions delivered an exceptional website for Vivekananda International School, capturing our ethos brilliantly. Their professionalism and tailored approach ensured a seamless process. Highly recommended for outstanding digital solutions!"</p>
+			</div>
+			<div class="testItem">
+				<img src="Images/testimonials/ml.jpg">
+				<h3> Dr. Madhavi Latha Kompella</h3>
+				<h4>Hyderabad, India</h4>
+				<p>"Madhavi Latha Kompella's  campaign for Hyderabad Lok Sabha for BJP party was greatly bolstered by Saanvika Software Solutions' digital marketing expertise. From captivating flyers to engaging videos and adept social media management, their efforts significantly enhanced our outreach and impact. Grateful for their dedicated support in shaping our campaign's success."</p>
+			</div>
+
+			</section>
+
+		<section class="indicators">
+			<div class="dot active" attr='0' onclick="switchTest(this)"></div>
+			<div class="dot" attr='1' onclick="switchTest(this)"></div>
+			<div class="dot" attr='2' onclick="switchTest(this)"></div>
+			<div class="dot" attr='3' onclick="switchTest(this)"></div>
+			<div class="dot" attr='4' onclick="switchTest(this)"></div>
+			<div class="dot" attr='5' onclick="switchTest(this)"></div>
+			<div class="dot" attr='6' onclick="switchTest(this)"></div>
+			<div class="dot" attr='7' onclick="switchTest(this)"></div>
+			<div class="dot" attr='8' onclick="switchTest(this)"></div>
+		</section>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		// Access the testimonials
+		let testSlide = document.querySelectorAll('.testItem');
+		// Access the indicators
+		let dots = document.querySelectorAll('.dot');
+
+		var counter = 0;
+
+		// Add click event to the indicators
+		function switchTest(currentTest) {
+			currentTest.classList.add('active');
+			var testId = currentTest.getAttribute('attr');
+			if (testId > counter) {
+				testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+				counter = testId;
+				testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+			}
+			else if (testId == counter) { return; }
+			else {
+				testSlide[counter].style.animation = 'prev1 0.5s ease-in forwards';
+				counter = testId;
+				testSlide[counter].style.animation = 'prev2 0.5s ease-in forwards';
+			}
+			indicators();
+		}
+
+		// Add and remove active class from the indicators
+		function indicators() {
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(' active', '');
+			}
+			dots[counter].className += ' active';
+		}
+
+		// Code for auto sliding
+		function slideNext() {
+			testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+			if (counter >= testSlide.length - 1) {
+				counter = 0;
+			}
+			else {
+				counter++;
+			}
+			testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+			indicators();
+		}
+		function autoSliding() {
+			deleteInterval = setInterval(timer, 2000);
+			function timer() {
+				slideNext();
+				indicators();
+			}
+		}
+		autoSliding();
+
+		// Stop auto sliding when mouse is over the indicators
+		const container = document.querySelector('.indicators');
+		container.addEventListener('mouseover', pause);
+		function pause() {
+			clearInterval(deleteInterval);
+		}
+
+		// Resume sliding when mouse is out of the indicators
+		container.addEventListener('mouseout', autoSliding);
+
+	</script>
+
+</body>
+
+</html>

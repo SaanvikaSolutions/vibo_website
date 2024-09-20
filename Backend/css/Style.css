@@ -1,0 +1,454 @@
+/* navigation css start  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "poppins",sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+
+    /* colours used  */
+    --blue-background-color: #009dea;
+}
+/* top navbar css start  */
+.TN-bar{
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+
+    /* position: block; */
+    margin-bottom: 10px;
+    z-index: 1000;
+    box-shadow: 1px 6px 10px -4px rgba(0,0,0,0.75);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.sticky {
+    /* position: block;
+    top: 0; */
+    width: 100%;
+    z-index: 1000;
+    /* Additional styles for the sticky navbar */
+}
+.TN-bar .S-logo{
+    margin-left: 50px;
+}
+.TN-bar .S-logo img{
+    width: 100%;
+    height: 100%;
+}
+.TN-bar .nav-items{
+    margin-right: 20px;
+}
+.TN-bar .nav-items ul{
+    list-style-type: none;
+    
+    display: flex;
+    align-items: center;
+}
+.TN-bar .nav-items ul li a{
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-left: 5px;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    /* transition: all 0.4s ease-in-out; */
+}
+.Profile-c{
+    /* border-radius: 50%;
+    background-color: #214DA6;
+    color: white;
+    width: 70px;
+    height: 70px;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-left: 10px;
+    font-size: 2.5rem;
+    font-weight: 600; */
+    width: 60px; /* Set the width and height for the circular icon */
+    height: 60px;
+    background-color: #214DA6; /* Set background color */
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px; /* Adjust font size for the letter inside */
+    color: #fff; 
+}
+
+.Profile-cc{
+    border-radius: 50%;
+    background-color: #214DA6;
+    color: white;
+    padding-left: 16px;
+    padding-top: 7px;
+    width: 50px;
+    height: 50px;
+
+    margin-right: 10px;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.TN-bar .nav-items ul li a i{
+    padding-left: 10px;
+}
+.TN-bar .nav-items ul li a:hover{
+    color: white;
+    background-color: var(--blue-background-color);
+}
+
+.TN-bar .burger{
+    display: none;
+    margin-left: 10px;
+}
+.pBox{
+
+    position: absolute;
+    top: 110px;
+    right: 10px;
+
+    display: none;
+
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+
+    background-color: #2182BF;
+
+    z-index: 999;
+    
+
+}
+.pBox-vis{
+    display: block;
+}
+.pBox .content11{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.pBox .cross{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+}
+.pBox .cross i{ 
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
+
+.pBox .content11 .profile-capsule{
+    width: 100%;
+
+    display: flex;
+    margin: 20px 0px;
+}
+.pBox .content11 .profile-capsule .cap{
+    width: 50%;
+    padding: 5px;
+    margin: 0px auto;
+    text-align: center;
+}
+.pBox .content11 .profile-capsule .cap a{
+    color: white;
+    margin: 10px 0px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.pBox .content11 .profile-capsule .cap-left{
+    border-top-left-radius: 100px;
+    background-color: green;
+    border-bottom-left-radius: 100px;
+}
+.pBox .content11 .profile-capsule .cap-right{
+    border-top-right-radius: 100px;
+    background-color: red;
+    border-bottom-right-radius: 100px;
+}
+@media only screen and (max-width: 900px) {
+    .Profile-c{
+        /* width: 50px;
+        height: 50px;
+        padding: 0px;
+        padding-left: 14px;
+        font-size: 2rem;
+        padding-top: 1px; */
+        width: 60px; /* Set the width and height for the circular icon */
+        height: 60px;
+        background-color: #214DA6; /* Set background color */
+        border-radius: 50%; /* Make it circular */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px; /* Adjust font size for the letter inside */
+        color: #fff; 
+
+    }
+    .TN-bar .S-logo{
+        margin-left: 10px;
+    }
+    .TN-bar .nav-items{
+        visibility: hidden;
+        opacity: 0;
+    }
+    .TN-bar .nav-items ul{
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+
+        position: absolute;
+        top: 100px;
+        left: 50%;
+
+        transform: translateX(-50%);
+    }
+    .TN-bar .nav-items ul li{
+        text-align: center;
+        /* margin: 10px 0px;
+        margin-bottom: 0px; */
+        padding: 10px 20px;
+        width: 100%;
+        border-bottom: 1px solid grey;
+    }
+    .TN-bar .nav-items ul li:last-child{
+        margin-bottom: 0px;
+    }
+    .TN-bar .nav-items ul li a{
+        margin-left: 0px;
+    }
+    .TN-bar .nav-vis{
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.4s ease-in-out;
+    }
+    .TN-bar .burger{
+        display: block;
+    }
+  }
+/* top navbar css end */
+
+
+
+/* Footer css Start  */
+.bf-c-section{
+    font-weight: bolder;
+    padding: 10px 10px;
+    border-top: 0.5px solid grey;
+    background-color: #f5f5f5;
+    width: 100%;
+
+    position: fixed;
+    bottom: 0px;
+}
+.bf-c-section strong{
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+.bf-c-section strong a{
+    color: #009dea;
+}
+/* Footer css end */
+
+
+
+/* Register css start  */
+.Reg{
+    /* background-color: #922424; */
+    /* position: relative; */
+    /* height: 80vh; */
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /* z-index: -1; */
+}
+.registration-form{
+    width: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    height: auto;
+    /* margin: auto; */
+    background-color: lightgrey;
+
+    padding: 20px;
+}
+.registration-form h3{
+    padding-bottom: 10px;
+    text-align: center;
+}
+.registration-form form .reg-each{
+    margin-bottom: 10px;
+}
+.registration-form form .reg-each label{
+    font-size: 0.9rem;
+    font-weight: 500;
+    /* padding: 5px; */
+}
+.registration-form form .reg-each .text-warning{
+    color: red;
+}
+.registration-form form .reg-each input[type="text"]{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+    outline: none;
+}
+.registration-form form .reg-each input[type="email"]{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+    outline: none;
+}
+.registration-form form .reg-each input[type="password"]{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+    outline: none;
+}
+.registration-form form .reg-each select{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+    outline: none;
+}
+.registration-form form .reg-each input[type="submit"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+    margin: 10px 0px;
+    outline: none;
+    font-weight: 600;
+    background-color: green;
+}
+@media only screen and (max-width: 900px) {
+    .registration-form{
+        width: 80%;
+    }
+
+}
+/* Register css end */
+
+
+
+/* profile css start  */
+#profile {
+    width: 100%;
+    /* min-height: 100vh; */
+}
+#profile .tps{
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+#profile .tps .Profile-cc{
+    max-width: 100px;
+    width: 100px;
+    height: 100px;
+    padding-left: 33px;
+    padding-top: 15px;
+    font-size: 3rem;
+}
+.tabel-container{
+    overflow-x: scroll;
+    margin-bottom: 50px;
+}
+#profile .AE-table-s{
+    border: 1px solid grey;
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: scroll;
+}
+#profile .AE-table-s tr th,#profile .AE-table-s tr td{
+    padding: 10px;
+    border: 1px solid black;
+}
+.pass-change h1{
+    padding: 10px 0px;
+}
+.pass-change form{
+    padding: 0px 10px;
+    margin-bottom: 50px;
+}
+.pass-change form .each-label .each-input1 input[type="password"]{
+    height: 40px;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+.pass-change form .each-label .each-input1 input[type="text"]{
+    height: 40px;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+.pass-change form input[type="submit"]{
+    height: 40px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.text-warning{
+    color: red;
+}
+/* profile css end */
+
+
+/* work page css start  */
+.up-W-F .each-label label{
+    font-weight: 400;
+    font-size: 1.2rem;
+
+}
+.up-W-F .each-label select{
+    border: 0.5px solid grey;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    width: 20%;
+
+    height: 40px;
+
+}
+.up-W-F .each-label button{
+    padding: 5px;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    padding:  10px 20px;
+    margin-left: 10px;
+
+    height: 40px;
+
+}
+/* work page css end */

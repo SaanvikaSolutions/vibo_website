@@ -1,0 +1,218 @@
+*{
+    margin:0px;
+    padding: 0;
+    box-sizing: border-box;
+    /* colors */
+    --black:black;
+    --white:white;
+    --text-color: #777771;
+    --submit-button: #0099ff;
+}
+/* body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    margin-top: 40px;
+    margin-bottom: 20px;
+} */
+.form-careers{
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+}
+.content-area{
+    width: 60%;
+    float: none;
+    margin: 0 auto;
+}
+main{
+    display: block;
+    margin: 0;
+}
+article{
+    display: block;
+}
+.ApplicationFormHeading{
+    text-align: center;
+    margin: 10px 0;
+}
+.career-post-form{
+    margin: 0 0 50px;
+}
+.single-entry-content{
+    font-size: 16px;
+    line-height: 1.8;
+}
+.entry-content{
+    counter-reset:footnotes;
+}
+.forminator{
+    padding:0;
+}
+.forminator-row{
+    display: flex;
+    margin-bottom: 30px;
+}
+.forminator-field{
+    flex:1;
+    padding: 0 15px;
+}
+.forminator-field-sub{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.forminator-label{
+    color:var(--black);
+    font-size: 16px;
+    font-weight: 400;
+    cursor:pointer;
+    display: block;
+    margin:0;
+    border: 0;
+    line-height: 1.7em;
+}
+.forminator-required{
+    color: red;
+}
+.forminator-input{
+    box-sizing: border-box;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    height: 50px;
+    min-height: unset;
+    max-height: unset;
+    display: block;
+    margin: 0;
+    padding: 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: var(--black);
+    background-color:var(white);
+    color: var(--black);
+    line-height: 1.3em;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: inherit;
+}
+.forminator-button{
+    width: auto;
+    min-width: 100px;
+    max-width: unset;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin: 0 10px 0 0;
+    padding: 10px;
+    border: 0;
+    border-radius: 2px;
+    background-image: unset;
+    line-height: 1.45em;
+    text-align: center;
+    transition: .2s ease;
+}
+.custom-button{
+    padding: 10px;
+    color:var(--white);
+    background-color: var(--submit-button);
+    cursor:pointer;
+    font-size: 16px;
+    font-family: inherit;
+    border: transparent solid 2px;
+}
+
+.custom-button:hover{
+    background-color: var(--black);
+}
+
+.custom-text{
+    margin-left: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    color:var(--text-color);
+}
+.forminator-textarea{
+    border-color: var(--black);
+    background-color: var(--white);
+    color: var(--black);
+    outline: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+    resize: vertical;
+    display: block;
+    margin: 0;
+    padding: 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    background-image: unset;
+    line-height: 20px;
+    font-size: 16px;
+    transition: .2s ease;
+    font-family: inherit;
+    overflow: auto;
+}
+.forminator-input:hover{
+    border: 1px solid rgb(147, 209, 238);
+}
+.forminator-textarea:hover{
+    border: 1px solid rgb(147, 209, 238);
+}
+.forminator-text-description{
+    color: var(--text-color);
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 400;
+    display: flex;
+    line-height: 1.5em;
+    margin:5px 0 0;
+    box-sizing: border-box;
+}
+.forminator-text-description>span{
+    min-width: 80px;
+    margin-right: 0px;
+    margin-left: auto;
+    text-align: right;
+    font-size: 12px;
+}
+.forminator-row:not(:last-child){
+    margin-bottom: 30px;
+}
+.forminator-submit-button{
+    background-color:var(--submit-button);
+    color: var(--white);
+    border: transparent solid 2px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 500;
+    outline: 0;
+    box-shadow: none;
+    text-decoration: none;
+}
+.forminator-submit-button:hover{
+    background-color:var(--black);
+}
+@media (max-width: 973px){
+    .forminator-row{
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding:0;
+    }
+    .content-area{
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .form-careers{
+        padding: 0;
+    }
+    .forminator-field{
+        width: 100%;
+    }
+}

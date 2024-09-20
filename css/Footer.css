@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "poppins",sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+
+    /* colours used  */
+    --blue-background-color: #009dea;
+}
+.bfooter{
+    color: #F6F7F9;
+    background-color: #282C35;
+    position: relative;
+}
+.bfooter .top-footer{
+    width: 100%;
+    padding: 30px 10px;
+    padding-bottom: 0px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.bfooter .top-footer .foot{
+    width: 300px;
+    padding: 10px;
+}
+.bfooter .top-footer .footer2{
+    width: 200px;
+}
+.bfooter .top-footer .foot .bf-header{
+    margin-bottom: 20px;
+}
+.bfooter .top-footer .foot .bf-header h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+.bfooter .top-footer .foot .bf-content p{
+    font-size: 0.9rem;
+}
+.bfooter .top-footer .foot .bf-content .bf-contact{
+    color: white;
+    display: flex;
+    
+}
+.bfooter .top-footer .foot .bf-content .bf-contact i{
+    font-size: 0.9rem;
+    padding: 10px;
+}
+.bfooter .top-footer .foot .bf-content .bf-contact p{
+    font-size: 0.9rem;
+    padding: 6px;
+}
+.bfooter .top-footer .foot .bf-content .bf-contact p a{
+    color: white;
+}
+.bfooter .top-footer .foot .bf-content .bf-contact p a:hover{
+    color: var(--blue-background-color);
+}
+.bfooter .top-footer .foot .bf-content ul{
+    margin-left: 20px;
+}
+.bfooter .top-footer .foot .bf-content ul li a{
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    
+}
+.bfooter .top-footer .foot .bf-content ul li a:hover{
+    color: var(--blue-background-color);
+}
+.bfooter .top-footer .foot .bf-content iframe{
+    width: 100%;
+    height: 200px;
+}
+.bfooter .down-footer{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #536076;
+}
+.bfooter .down-footer p{
+    font-size: 0.8rem;
+}
+.bfooter .down-footer p a{
+    color: white; 
+}
+.bfooter .down-footer p a:hover{
+    color: var(--blue-background-color);
+}
+@media only screen and (max-width: 900px) {
+    .bfooter .top-footer{
+        flex-direction: column;
+    }
+    .bfooter .top-footer .foot{
+        width: 100%;
+        padding-left: 0px;
+    }
+    .bfooter .top-footer .foot .bf-content .bf-contact i{
+        padding-left: 0px;
+    }
+    .bfooter .top-footer .foot .bf-header h3{
+        text-align: left;
+    }
+
+
+}
