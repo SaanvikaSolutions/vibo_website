@@ -1,9 +1,9 @@
 class SpecialHeader extends HTMLElement {
     connectedCallback() {
-      this.innerHTML = `
+        this.innerHTML = `
         <nav class="TN-bar">
           <div class="S-logo">
-            <img src="./Images/Logo/saanvika logo.png" alt="LOGO"/>
+            <img src="./Images/Logo/logo.png" alt="LOGO"/>
           </div>
   
           <div class="nav-items">
@@ -22,12 +22,12 @@ class SpecialHeader extends HTMLElement {
         </nav>
       `;
     }
-  }
-  
-  customElements.define('special-header', SpecialHeader);
+}
 
-  class SpecialFooter extends HTMLElement{
-    connectedCallback(){
+customElements.define('special-header', SpecialHeader);
+
+class SpecialFooter extends HTMLElement {
+    connectedCallback() {
         this.innerHTML = `
             <footer class="bfooter">
                 <div class="top-footer">
@@ -36,7 +36,7 @@ class SpecialHeader extends HTMLElement {
                             <h3>About</h3>
                         </div>
                         <div class="bf-content">
-                            <p>We innovate. We excel. Your success, our commitment. From digital marketing strategies to sleek web development, we bring creativity and expertise to every project. Elevate your digital presence with us.</p>
+                            <p>At Vibo Aesthetics, we are dedicated to enhancing beauty and confidence through a personalized, patient-centric approach. Our motto Crafting Precision reflects comitment in delivering meticulous high quality results with tailored approuch.</p>
                         </div>
                     </div>
                     <div class="foot footer2">
@@ -88,11 +88,11 @@ class SpecialHeader extends HTMLElement {
             </footer>
         `
     }
-  }
-  customElements.define('special-footer',SpecialFooter);
+}
+customElements.define('special-footer', SpecialFooter);
 
-  class SpecialTestimonials extends HTMLElement{
-    connectedCallback(){
+class SpecialTestimonials extends HTMLElement {
+    connectedCallback() {
         this.innerHTML = `
         <div class="container">
 
@@ -201,5 +201,5 @@ class SpecialHeader extends HTMLElement {
 	</div>
         `
     }
-  }
-  customElements.define('special-testimonials',SpecialTestimonials);
+}
+customElements.define('special-testimonials', SpecialTestimonials);
