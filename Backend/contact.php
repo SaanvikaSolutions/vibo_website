@@ -43,13 +43,13 @@ include('./connections/dbconnect.php');
 <?php
 if (isset($_GET['delete_id'])) {
     $id = $_GET['delete_id'];
-    $delete_query = "DELETE FROM `career` WHERE `id` = $id";
+    $delete_query = "DELETE FROM `contact` WHERE `id` = $id";
     $result_query = mysqli_query($con, $delete_query);
 
     if ($result_query) {
-        echo "<script>alert('Deleted successfully'); window.location.href = 'career.php';</script>";
+        echo "<script>alert('Deleted successfully'); window.location.href = 'contact.php';</script>";
     } else {
-        echo "<script>alert('Error deleting record'); window.location.href = 'career.php';</script>";
+        echo "<script>alert('Error deleting record'); window.location.href = 'contact.php';</script>";
     }
 }
 ?>
