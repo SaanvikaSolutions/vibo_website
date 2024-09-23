@@ -1,3 +1,15 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['email'])) {
+    // Redirect to the login page if not logged in
+    header("Location: Register.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +33,6 @@
 
     <div class="top-container">
         <img src="./Images/career/carerer2.jpg" alt="careeer">
-        <!-- <h1 class="top-container-heading">Careers</h1> -->
     </div>
 
     <div class="form-careers">
@@ -31,17 +42,17 @@
                     <div class="entry-content single-entry-content">
                         <h1 class="ApplicationFormHeading">Application Form</h1>
                         <form class="forminator" action="" method="post" enctype="multipart/form-data">
-                            <div class="forminator-row"><!------flex------>
+                            <div class="forminator-row">
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <label for="forminator-field-name" class="forminator-label">First Name<span class="forminator-required">*</span></label>
-                                        <input type="text" class="forminator-input" name="firstname" value placeholder="E.g. John" required>
+                                        <input type="text" class="forminator-input" name="firstname" placeholder="E.g. John" required>
                                     </div>
                                 </div>
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <label for="forminator-field-name" class="forminator-label">Last Name<span class="forminator-required">*</span></label>
-                                        <input type="text" class="forminator-input" name="lastname" value placeholder="Doe" required>
+                                        <input type="text" class="forminator-input" name="lastname" placeholder="Doe" required>
                                     </div>
                                 </div>
                             </div>
@@ -49,25 +60,25 @@
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <label for="forminator-field-name" class="forminator-label">Email Address<span class="forminator-required">*</span></label>
-                                        <input type="email" class="forminator-input" name="Email" value placeholder="john@doe.com" required>
+                                        <input type="email" class="forminator-input" name="Email" placeholder="john@doe.com" required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="forminator-row"><!------flex------>
+                            <div class="forminator-row">
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <label for="forminator-field-name" class="forminator-label">Contact No:<span class="forminator-required">*</span></label>
-                                        <input type="text" class="forminator-input" name="contactno" value placeholder="E.g. 9874563210" required>
+                                        <input type="text" class="forminator-input" name="contactno" placeholder="E.g. 9874563210" required>
                                     </div>
                                 </div>
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <label for="forminator-field-name" class="forminator-label">Alternate Contact no:</label>
-                                        <input type="text" class="forminator-input" name="alternateno" value placeholder="E.g.9876543210">
+                                        <input type="text" class="forminator-input" name="alternateno" placeholder="E.g.9876543210">
                                     </div>
                                 </div>
                             </div>
-                            <div class="forminator-row"><!------flex------>
+                            <div class="forminator-row">
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <label for="forminator-field-name" class="forminator-label">Upload Resume<span class="forminator-required">*</span></label>
@@ -77,18 +88,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="forminator-row"><!------flex------>
+                            <div class="forminator-row">
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <label for="forminator-field-name" class="forminator-label">Message/comments:</label>
-                                        <textarea name="textarea-1" placeholder="Enter your message....!" id="forminator-field-textarea" class="forminator-textarea" rows="6" style="min-height: 140px;" maxlength="180"></textarea>
+                                        <textarea name="textarea-1" placeholder="Enter your message....!" class="forminator-textarea" rows="6" maxlength="180"></textarea>
                                         <span id="forminator-field-textarea" class="forminator-text-description">
                                             <span data-limit="180" data-type="characters">0 / 180</span>
                                         </span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="forminator-row forminator-last-row"><!------flex------>
+                            <div class="forminator-row forminator-last-row">
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
                                         <button class="forminator-button forminator-submit-button" name="Submit" type="submit">Send Message</button>
@@ -99,7 +110,6 @@
                     </div>
                 </article>
             </main>
-
         </div>
     </div>
 
@@ -113,9 +123,6 @@
         $contactno = $_POST['contactno'];
         $alternateno = $_POST['alternateno'];
         $message = $_POST['textarea-1'];
-        
-        // $resume = $_FILES['real-file']['name'];
-        // $tempResume = $_FILES['real-file']['tmp_name'];
 
         $file = $_FILES['real-file'];
         $filename = $file['name'];
@@ -125,40 +132,37 @@
 
         move_uploaded_file($fileTmpPath,"./Files/$filename");
 
-        $query = "INSERT INTO `career`(`First_Name`, `Last_Name`, `Email Id`, `Mobile_Number`, `Alternate Mobile_No`, `Resume`, `Message`) VALUES ('$fname','$lname','$email','$contactno','$alternateno','$filename',' $message')";
+        $query = "INSERT INTO `career`(`First_Name`, `Last_Name`, `Email Id`, `Mobile_Number`, `Alternate Mobile_No`, `Resume`, `Message`) 
+        VALUES ('$fname','$lname','$email','$contactno','$alternateno','$filename',' $message')";
 
-        $res = mysqli_query($con,$query);
+        $res = mysqli_query($con, $query);
         if($res){
             echo "<script>alert('Applied successfully.')</script>";
-        }else{
+        } else {
             echo "<script>alert('Error: " . mysqli_error($con) . "')</script>";
         }
-
     }
-
-
-?>
+    ?>
 
     <footer>
         <special-footer></special-footer>
     </footer>
     <script src="https://kit.fontawesome.com/b19824e628.js" crossorigin="anonymous"></script>
     <script src="./CustomeElements.js"></script>
-    <!-- <script src="./js/nav.js"></script> -->
     <script src="./js/app.js"></script>
 
     <script>
-        const realFileBtn=document.getElementById("real-file");
-        const customBtn=document.getElementById("custom-button");
-        const customTxt=document.getElementById("custom-text");
-        customBtn.addEventListener("click",function(){
+        const realFileBtn = document.getElementById("real-file");
+        const customBtn = document.getElementById("custom-button");
+        const customTxt = document.getElementById("custom-text");
+        customBtn.addEventListener("click", function() {
             realFileBtn.click();
         });
-        realFileBtn.addEventListener("change",function(){
-            if(realFileBtn.value){
-                customTxt.innerHTML=realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-            }else{
-                customTxt.innerHTML="No file chosen";
+        realFileBtn.addEventListener("change", function() {
+            if (realFileBtn.value) {
+                customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            } else {
+                customTxt.innerHTML = "No file chosen";
             }
         });
     </script>

@@ -1,6 +1,17 @@
 <?php
 include("sidebar.php");
 include('./connections/dbconnect.php');
+
+// Start the session
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['email'])) {
+    // Redirect to the login page if not logged in
+    header("Location: Register.php");
+    exit();
+}
+
 ?>
 
 <div class="container">
@@ -31,7 +42,7 @@ include('./connections/dbconnect.php');
                         echo '<td>' . $row['Contact_Number'] . '</td>';
                         echo '<td>' . $row['Email'] . '</td>';
                         echo '<td>' . $row['Comments'] . '</td>';
-                        echo '<td><button><a href="javascript:void()" onClick="chkalert('.$row['id'].')">Delete</a></button></td>';
+                        echo '<td><button style="background-color: red; color: aliceblue; border-radius: 8px; padding: 5px;"><a href="javascript:void()" style="text-decoration: none; color: white;" onClick="chkalert('.$row['id'].')">Delete</a></button></td>';
                         echo '</tr>';
                     }
                 }
@@ -63,7 +74,7 @@ if (isset($_GET['delete_id'])) {
     function chkalert(id) {
         let sts = confirm('Are you sure you want to delete it?');
         if (sts) {
-            document.location.href = `career.php?delete_id=${id}`;
+            document.location.href = `contact.php?delete_id=${id}`;
         }
     }
 </script>

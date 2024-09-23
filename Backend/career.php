@@ -1,6 +1,16 @@
 <?php
 include("sidebar.php");
 include('./connections/dbconnect.php');
+
+// Start the session
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['email'])) {
+    // Redirect to the login page if not logged in
+    header("Location: Register.php");
+    exit();
+}
 ?>
 
 <div class="container">
@@ -35,9 +45,9 @@ include('./connections/dbconnect.php');
                         echo '<td>' . $row['Email Id'] . '</td>';
                         echo '<td>' . $row['Mobile_Number'] . '</td>';
                         echo '<td>' . $row['Alternate Mobile_No'] . '</td>';
-                        echo '<td><button><a href="./Files/' . $row['Resume'] . '" target="_blank">View Resume</i></a></button></td>';
+                        echo '<td><button style="background-color: blue; color: aliceblue; border-radius: 8px; padding: 5px;"><a href="./Files/' . $row['Resume'] . '" target="_blank" style="text-decoration: none; color: white;">View Resume</i></a></button></td>';
                         echo '<td>' . $row['Message'] . '</td>';
-                        echo '<td><button><a href="javascript:void()" onClick="chkalert('.$row['id'].')">Delete</a></button></td>';
+                        echo '<td><button style="background-color: red; color: aliceblue; border-radius: 8px; padding: 5px;"><a href="javascript:void()" style="text-decoration: none; color: white;" onClick="chkalert('.$row['id'].')">Delete</a></button></td>';
                         echo '</tr>';
                     }
                 }
