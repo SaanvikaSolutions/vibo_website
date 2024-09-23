@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "saanvika";
+$database = "vibo_aesthetics";
 
 // Create a connection
 $con = mysqli_connect($servername, $username, $password, $database);
