@@ -20,8 +20,8 @@
     </header>
 
     <div class="top-container">
-        <img src="./Images/career/77.jpg" alt="careeer">
-        <h1 class="top-container-heading">Careers</h1>
+        <img src="./Images/career/carerer2.jpg" alt="careeer">
+        <!-- <h1 class="top-container-heading">Careers</h1> -->
     </div>
 
     <div class="form-careers">
