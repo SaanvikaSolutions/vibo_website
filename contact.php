@@ -184,7 +184,7 @@
         <div class="content">
             <div class="contact-form">
                 <h1>Book an appointment</h1>
-                <form>
+                <form  action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
                         <input type="text" id="fullName" name="fullName" required>
@@ -209,6 +209,28 @@
             </div>
            
         </div>
+        <?php
+    include('./Backend/connections/dbconnect.php');
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $fname = $_POST['fullName'];
+        $lname = $_POST['phoneNumber'];
+        $email = $_POST['email'];
+        $contactno = $_POST['message'];
+
+        $query = "INSERT INTO `contact`(`Name`, `Contact_Number`, `Email`, `Comments`) VALUES ('$fname','$lname','$email','$contactno')";
+
+        $res = mysqli_query($con,$query);
+        if($res){
+            echo "<script>alert('Inserted successfully.')</script>";
+        }else{
+            echo "<script>alert('Error: " . mysqli_error($con) . "')</script>";
+        }
+
+    }
+
+
+?>
 
         <div class="contact-details-container">
             <div class="contact-detail">
