@@ -129,6 +129,7 @@ body{
     position: relative;
 }
 .top-container img{
+    margin-top: 4%;
     width: 100%;
     height: 400px;
 }
