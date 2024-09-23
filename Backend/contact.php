@@ -4,24 +4,21 @@ include('./connections/dbconnect.php');
 ?>
 
 <div class="container">
-    <h2>Career Details <small>Displaying Career Details</small></h2>
+    <h2>Contact Details <small>Displaying Contact Details</small></h2>
     <table class="responsive-table">
         <thead>
             <tr>
                 <th><span>SNo</span></th>
-                <th><span>First Name</span></th>
-                <th><span>Last Name</span></th>
-                <th><span>Email</span></th>
+                <th><span>Name</span></th>
                 <th><span> Contact No</span></th>
-                <th><span>Alt Contact No</span></th>
-                <th><span>Resume</span></th>
+                <th><span>Email</span></th>
                 <th><span> Message</span></th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
         <?php
-                $showquery = "SELECT * FROM `career`";
+                $showquery = "SELECT * FROM `contact`";
                 $showRes = mysqli_query($con, $showquery);
                 $sno = 1; // To track serial numbers
 
@@ -30,13 +27,10 @@ include('./connections/dbconnect.php');
                     while ($row = mysqli_fetch_assoc($showRes)) {
                         echo '<tr>';
                         echo '<td>' . $sno++ . '</td>'; // Display SNo
-                        echo '<td>' . $row['First_Name'] . '</td>';
-                        echo '<td>' . $row['Last_Name'] . '</td>';
-                        echo '<td>' . $row['Email Id'] . '</td>';
-                        echo '<td>' . $row['Mobile_Number'] . '</td>';
-                        echo '<td>' . $row['Alternate Mobile_No'] . '</td>';
-                        echo '<td><button><a href="./Files/' . $row['Resume'] . '" target="_blank">View Resume</i></a></button></td>';
-                        echo '<td>' . $row['Message'] . '</td>';
+                        echo '<td>' . $row['Name'] . '</td>';
+                        echo '<td>' . $row['Contact_Number'] . '</td>';
+                        echo '<td>' . $row['Email'] . '</td>';
+                        echo '<td>' . $row['Comments'] . '</td>';
                         echo '<td><button><a href="javascript:void()" onClick="chkalert('.$row['id'].')">Delete</a></button></td>';
                         echo '</tr>';
                     }
@@ -49,13 +43,13 @@ include('./connections/dbconnect.php');
 <?php
 if (isset($_GET['delete_id'])) {
     $id = $_GET['delete_id'];
-    $delete_query = "DELETE FROM `career` WHERE `id` = $id";
+    $delete_query = "DELETE FROM `contact` WHERE `id` = $id";
     $result_query = mysqli_query($con, $delete_query);
 
     if ($result_query) {
-        echo "<script>alert('Deleted successfully'); window.location.href = 'career.php';</script>";
+        echo "<script>alert('Deleted successfully'); window.location.href = 'contact.php';</script>";
     } else {
-        echo "<script>alert('Error deleting record'); window.location.href = 'career.php';</script>";
+        echo "<script>alert('Error deleting record'); window.location.href = 'contact.php';</script>";
     }
 }
 ?>

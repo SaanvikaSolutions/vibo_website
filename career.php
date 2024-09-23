@@ -91,7 +91,7 @@
                             <div class="forminator-row forminator-last-row"><!------flex------>
                                 <div class="forminator-field">
                                     <div class="forminator-field-sub">
-                                        <button class="forminator-button forminator-submit-button" type="submit">Send Message</button>
+                                        <button class="forminator-button forminator-submit-button" name="Submit" type="submit">Send Message</button>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
     </div>
 
     <?php
-    include("./Backend/connections/dbconnect.php");
+    include('./Backend/connections/dbconnect.php');
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $fname = $_POST['firstname'];
@@ -125,7 +125,7 @@
 
         move_uploaded_file($fileTmpPath,"./Files/$filename");
 
-        $query = "INSERT INTO `career`(`fname`, `lname`, `email`, `contactNo`, `altNo`, `resume`, `message`) VALUES ('$fname','$lname','$email','$contactno','$alternateno','$filename','$message')";
+        $query = "INSERT INTO `career`(`First_Name`, `Last_Name`, `Email Id`, `Mobile_Number`, `Alternate Mobile_No`, `Resume`, `Message`) VALUES ('$fname','$lname','$email','$contactno','$alternateno','$filename',' $message')";
 
         $res = mysqli_query($con,$query);
         if($res){
