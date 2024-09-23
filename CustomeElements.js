@@ -12,7 +12,7 @@ class SpecialHeader extends HTMLElement {
               <li><a href="About.html">About us</a></li>
               <li><a href="services.html">Our Services</a></li>
               <li><a href="career.php">Careers</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="contact.php">Contact us</a></li>
             </ul>
           </div>
   
@@ -45,11 +45,11 @@ class SpecialFooter extends HTMLElement {
                         </div>
                         <div class="bf-content">
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Career</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="About.html">About Us</a></li>
+                                <li><a href="services.html">Our Services</a></li>
+                                <li><a href="career.php">Career</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
